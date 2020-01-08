@@ -18,9 +18,10 @@
 {% endif %}
 
 {% block content %}
+  {% include "partials/global/site-head.njk" %}
   <main id="main-content" tabindex="-1">
-    {% include "partials/components/intro.njk" %}
-    {% include "partials/components/post-list.njk" %}
-    {% include "partials/components/pagination.njk" %}
+   <article role="main">
+    {% include "partials/components/home_intro.njk" %}
+    </article>
   </main>
 {% endblock %}

@@ -1,0 +1,44 @@
+<header class="[ intro ] [ pad-top-900 pad-bottom-max ]">
+  <div class="[ inner-wrapper ] [ sf-flow ]">
+    <h1 class="[ intro__heading{{ ' intro__heading--compact' if page.url === '/' }} ] [ text-800 md:text-900 leading-tight ] [ p-name ]">{{ introHeading }}</h1>
+    {% if introSummary %}
+      <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-short ]">{{ introSummary | safe }}</div>
+    {% endif %}
+  </div>
+</header>
+
+<header class="main-header" role="complementary">
+    <div class="hero">
+        <div class="wrapper">
+            <h3 class="subtitle">{{ headline | safe }}</h3>
+            <div class="logotype">
+                <h2 title="{{ introHeading }}"><img src="/images/logos/groupxl.svg" alt="Logotype for {{ introHeading }}"></h2>
+            </div>
+        </div>
+    </div><!-- hero -->
+    <div class="intro">
+        <div class="wrapper">
+            <div class="video">
+                <div class="video-button" id="vidBtn">
+                    <img src="{{ videoCover }}" title="Play video" alt="A group of people at an Xcelerator mixer">
+                    <div class="video-cover">
+                        <div class="vid-icon-outer">
+                            <div class="vid-icon">
+                                <div class="vid-triangle"></div>
+                            </div>
+                        </div>
+                        <p>Learn more about the transformative Xcelerator program for managers</p>
+                    </div>
+                </div>
+                <div id="{{ headvideo }}" class="player-fr" data-video="{{ headvideo }}"></div>
+            </div>
+            <div class="home-grid">
+                <div class="hg__full to-half intro-copy highlight">
+                    <p>{{ introSummary | safe }}</p>
+                </div>
+                
+                {% include "partials/components/home_contact1.njk" %}
+            </div>
+        </div>
+    </div>
+</header>

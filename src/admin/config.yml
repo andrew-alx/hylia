@@ -23,7 +23,12 @@ collections:
           - {label: "Post Feed Heading", name: "postsHeading", widget: "string", default: "Latest posts"}
           - {label: "Archive Link Text", name: "archiveButtonText", widget: "string", default: "See all posts"}
           - {label: "Social Image", name: "socialImage", widget: "image", required: false}
+          - {label: "Header Video", name: "headvideo", widget: "string", required: false}
+          - {label: "Video Cover", name: "videoCover", widget: "image", required: false}
+          - {label: "Headline", name: "headline", widget: "markdown"}
           - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Contact Widget Header", name: "contactHeader", widget: "markdown"}
+          - {label: "Contact Widget Copy", name: "contactCopy", widget: "markdown"}
   - name: "generic_pages"
     label: "Generic Pages"
     folder: "src/pages"
@@ -116,4 +121,4 @@ collections:
           - label: "Fonts"
             name: "fonts"
             widget: "hidden"
-            default: { "base": "\"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'\"", "serif": "\"'Lora', serif\""}
+            default: { "base": "\"'Geometria', Helvetica, Arial, sans-serif\"" }

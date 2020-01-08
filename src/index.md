@@ -1,10 +1,12 @@
 ---
 layout: home
-title: A simple starter kit for Eleventy
+title: Leadership Xcelerator from African Leadership Group
 postsHeading: Latest posts
 archiveButtonText: See all posts
 socialImage: ''
+headvideo: hNvTRPfeeTs
+headline: Transforming Your Managers<br>Into High-Impact Leaders
+contactHeader: Ready to be transformed?
+contactCopy: If you have any questions about the programme, or are wondering how we can help your organisation, we'd love to hear from you.
 ---
-Hylia is a lightweight [Eleventy](https://11ty.io) starter kit with [Netlify CMS](https://www.netlifycms.org/) pre-configured, so that you can one-click install a progressive, accessible blog in minutes. It also gives you a well organised starting point to extend yourself.
-
-Get started now by [deploying Hylia to Netlify.](https://app.netlify.com/start/deploy?repository=https://github.com/hankchizljaw/hylia&stack=cms)
+Drawing upon 15 years of African Leadership Group’s experience delivering transformative learning to executives, managers, and students, the six-month, part-time Xcelerator program is designed to help rising professionals fulfil their leadership potential and drive your business forward.
