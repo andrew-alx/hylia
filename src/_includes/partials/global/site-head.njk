@@ -1,6 +1,7 @@
+{% if page.url == '/' %}
 <div class="header-container wrapper" id="headCont">
     <header class="nav-container copy" role="banner">
-        <h1 class="header-logo" title="Xcelerator from AL Group"><a href="#top"><img src="assets/svgs/logotype-top.svg"></a></h1>
+        <h1 class="header-logo" title="{{ site.name }}"><a href="#top"><img src="/images/logos/logotype-top.svg" alt="Logotype for {{ site.name }}"></a></h1>
 
         <nav class="main-nav">
             <button class="button small yellow" id="contactUs1" title="Open Contact form" aria-haspopup="true" aria-controls="contactModal" aria-expanded="false">
@@ -9,18 +10,5 @@
         </nav>
     </header>
 </div>
+{% endif %}
 <a href="#top" class="anchor"></a>
-
-<a class="skip-link" href="#main-content">Skip to content</a>
-<header role="banner" class="[ site-head ] [ pad-top-700 pad-bottom-700 ">
-  <div class="wrapper">
-    <span class="visually-hidden">{{ site.name }}: {{ pageType }}</span>
-    <div class="[ site-head__inner ] [ md:box-flex space-between align-center ]">
-      <a href="/" class="[ site-head__site-name ] [ leading-tight ]"{{ 'aria-current=page' if page.url == '/' | safe }}>
-        <span class="visually-hidden">{{ 'Back to homepage' if page.url != '/' else 'Homepage' }}</span>
-        <span class="[ site-head__site-name ] [ text-600 ]" aria-hidden="true">{{ site.name }}</span>
-      </a>
-      {% include "partials/components/nav.njk" %}
-    </div>
-  </div>
-</header>

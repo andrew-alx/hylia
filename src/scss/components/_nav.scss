@@ -28,3 +28,33 @@
     }
   }
 }
+
+.main-nav {
+    box-shadow: 0px 0px 12px 0px rgba(var(--color-theme-primary),0.2);
+    transition: box-shadow 0.15s ease-in;
+}
+
+.body-ds {
+    .main-nav {
+        opacity: 0;
+        transition: opacity 0.15s ease-in;
+    }
+}
+
+.body-ds .header-container {
+    &.show {
+        background-color: rgba(var(--color-ds-theme-primary), 1);
+        
+        .main-nav {
+            opacity: 1;
+            transition: opacity 0.3s ease-out;
+        }
+    }
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}

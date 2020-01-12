@@ -28,9 +28,18 @@ $stalfos-util-prefix: 'sf-';
  * Various misc metrics to use around the site
  */
 $metrics: (
-  'wrap-max-width': 58rem,
+  'wrap-max-width': 105rem,
   'wrap-inner-max-width': 52rem,
-  'md-breakpoint': 48rem
+    'base-max-breakpoint': 29.938rem,
+    'sm-breakpoint': 30rem,
+    'sm-max-breakpoint': 38.938rem,
+    'sm1-breakpoint': 39rem,
+    'sm1-max-breakpoint': 47.938rem,
+    'md-breakpoint': 48rem,
+    'md-lg-breakpoint': 56rem,
+    'md-max-breakpoint': 63.938rem,
+    'lg-breakpoint': 64rem,
+    'xl-breakpoint': 88rem
 );
 
 /**
@@ -171,7 +180,12 @@ $stalfos-config: (
     'property': 'width'
   ),
   'breakpoints': (
-    'md': #{'(min-width: ' + map-get($metrics, 'md-breakpoint') + ')'}
+    'sm': #{'(min-width: ' + map-get($metrics, 'sm-breakpoint') + ')'},
+    'sm1': #{'(min-width: ' + map-get($metrics, 'sm1-breakpoint') + ')'},
+    'md': #{'(min-width: ' + map-get($metrics, 'md-breakpoint') + ')'},
+    'md-lg': #{'(min-width: ' + map-get($metrics, 'md-lg-breakpoint') + ')'},
+    'lg': #{'(min-width: ' + map-get($metrics, 'lg-breakpoint') + ')'},
+    'xl': #{'(min-width: ' + map-get($metrics, 'xl-breakpoint') + ')'}
   ),
   'utilities': (
     'reset': 'on',

@@ -3,13 +3,32 @@
   border: none;
   background-color: var(--color-action-bg);
   color: var(--color-action-text);
-  padding: get-size(300) get-size('base');
+  padding: get-size(100) get-size(500);
+  font-size: get-size(base);
   line-height: 1;
   margin: 0;
   text-decoration: none;
   cursor: pointer;
+    border-radius: 0.125rem;
   -webkit-appearance: none;
   -moz-appearance: none;
+    
+    @include media-query('sm') {
+        font-size: get-size(500s);
+    }
+    
+    @include media-query('md') {
+        font-size: get-size(500);
+    }
+    
+    &.small {
+        font-size: get-size(100s);
+        padding: (get-size(100)/2) get-size(100);
+        
+        @include media-query('md') {
+            font-size: get-size(base);
+        }
+    }
 }
 
 .button:hover,

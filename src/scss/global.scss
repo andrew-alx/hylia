@@ -3,6 +3,9 @@
 // Pull in the stalfos lib
 @import '../../node_modules/stalfos/stalfos.scss';
 
+// Pull in the susy lib
+@import '../../node_modules/susy/sass/susy';
+
 // Local mixins
 @import 'mixins/dark-mode';
 
@@ -10,6 +13,14 @@
 
 // Local dependencies
 @import 'typography';
+
+////// Susy Grid setup   
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': 0.5,
+  'spread': 'narrow',
+  'container-spread': 'narrow'
+);
 
 /**
  * GLOBAL STYLES

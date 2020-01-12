@@ -5,3 +5,49 @@
     color: var(--color-text);
   }
 }
+
+.header-container {
+    position: fixed;
+    z-index: 10;
+    height: var(--fix-head);
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(white, 0);
+    //background-color: white;
+    transition: background-color 0.15s ease-in;
+    
+    @include media-query('md') {
+        height: var(--fix-head-lrg);
+    }
+    
+    &.show {
+        background-color: rgba(white, 1);
+        transition: background-color 0.3s ease-out;
+        
+        &.ds {
+            background-color: rgba(var(--color-ds-theme-primary), 1);
+        }
+        
+        .header-logo {
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+        
+        .main-nav {
+            box-shadow: 0px 0px 5px 0px rgba(white,0);
+            transition: box-shadow 0.3s ease-out;
+        }
+    }
+}
+
+.header-logo {
+    opacity: 0;
+    transition: opacity 0.15s ease-in;
+    line-height: 1;
+    width: span(7 of 12);
+    
+    @include media-query('sm1') {
+        width: span(9 of 12);
+    }
+}
