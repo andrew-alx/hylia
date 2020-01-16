@@ -1,12 +1,96 @@
 .wrapper {
-  //max-width: map-get($metrics, 'wrap-max-width');
-  //margin-left: auto;
-  //margin-right: auto;
-  padding-left: gutter(12);
-  padding-right: gutter(12);
+    //max-width: map-get($metrics, 'wrap-max-width');
+    //margin-left: auto;
+    //margin-right: auto;
+    padding-left: gutter(12);
+    padding-right: gutter(12);
+    
+    &:not(.full-width) {
+        section {
+            margin-bottom: 4rem;
+
+            @include media-query('sm1') {
+                margin-bottom: 6rem;
+            }
+
+            @include media-query('md') {
+                margin-bottom: 8rem;
+            }
+        }
+    }
+    
+    .subsection:not(:last-child) {
+        margin-bottom: 3rem;
+
+        @include media-query('sm1') {
+            margin-bottom: 4rem;
+        }
+
+        @include media-query('md') {
+            margin-bottom: 5rem;
+        }
+    }
+
+    .innersection:not(:last-child) {
+        margin-bottom: 1rem;
+
+        @include media-query('sm1') {
+            margin-bottom: 2rem;
+        }
+
+        @include media-query('md') {
+            margin-bottom: 4rem;
+        }
+    }
+    
+    &.full-width {
+        margin-bottom: 4rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        @include media-query('sm1') {
+            margin-bottom: 6rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        @include media-query('md') {
+            margin-bottom: 8rem;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+    }
+    
+    &.blue {
+        background-color: var(--color-xl-grey-50);
+    }
+
+    &.dkblue {
+        background-color: var(--color-xl-navy);
+
+        h2, p {
+            color: white;
+        }
+    }
+}
+
+.body-ds .wrapper {
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    @include media-query('md') {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+.body-ds footer {
+    margin-bottom: 8rem;
 }
 
 .copy {
     max-width: map-get($metrics, 'wrap-max-width');
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
 }

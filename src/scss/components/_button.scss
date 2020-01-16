@@ -1,17 +1,22 @@
 .button {
-  display: inline-block;
-  border: none;
-  background-color: var(--color-action-bg);
-  color: var(--color-action-text);
-  padding: get-size(100) get-size(500);
-  font-size: get-size(base);
-  line-height: 1;
-  margin: 0;
-  text-decoration: none;
-  cursor: pointer;
+    display: inline-block;
+    border: none;
+    background-color: var(--color-action-bg);
+    color: var(--color-action-text);
+    padding: get-size(100) get-size(500);
+    font-size: get-size(base);
+    line-height: 1;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
     border-radius: 0.125rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: color var(--btn-off), background-color var(--btn-off);
+    font-family: 'Geometria', Helvetica, sans-serif;
     
     @include media-query('sm') {
         font-size: get-size(500s);
@@ -19,21 +24,141 @@
     
     @include media-query('md') {
         font-size: get-size(500);
+        
+        svg {
+            width: 2rem;
+            height: 2rem;
+        }
     }
     
     &.small {
-        font-size: get-size(100s);
+        font-size: get-size(300s);
         padding: (get-size(100)/2) get-size(100);
         
         @include media-query('md') {
             font-size: get-size(base);
         }
     }
+    
+    &.large {
+
+        @include media-query('sm') {
+            font-size: get-size(500s);
+        }
+        @include media-query('sm1') {
+            font-size: get-size(600s);
+        }
+        @include media-query('md') {
+            font-size: get-size(600);
+        }
+    }
+    
+    &.ex-wide {
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+    
+    &.navy {
+        color: var(--color-xl-gold);
+        background-color: var(--color-xl-navy);
+
+        &:hover {
+            color: var(--color-xl-navy);
+            background-color: var(--color-xl-gold);
+        }
+    }
+
+    &.ds-navy {
+        color: var(--color-ds-yellow);
+        background-color: var(--color-xl-navy);
+
+        &:hover {
+            color: var(--color-xl-navy);
+            background-color: var(--color-ds-yellow);
+        }
+    }
+    
+    &.yellow {
+        color: var(--color-xl-navy);
+        background-color: var(--color-xl-gold);
+
+        &:hover {
+            color: var(--color-xl-gold);
+            background-color: var(--color-xl-navy);
+        }
+    }
+
+    &.ds-yellow {
+        color: var(--color-xl-navy);
+        background-color: var(--color-xl-gold);
+
+        &:hover {
+            color: var(--color-xl-gold);
+            background-color: var(--color-xl-navy);
+        }
+    }
+    
+    &.ds-yellow-ol {
+        color: var(--color-ds-yellow);
+        background-color: var(--color-xl-navy);
+        border: 1px solid var(--color-ds-yellow);
+
+        &:hover {
+            background-color: var(--color-ds-yellow);
+            color: var(--color-xl-navy);
+        }
+    }
+
+    &.icon-btn {
+        background: none;
+        padding: 0;
+
+        svg {
+            stroke: var(--color-xl-navy);
+            transition: stroke var(--btn-off);
+            width: 2rem;
+            height: 2rem;
+        }
+
+        &:hover svg {
+            stroke: var(--color-xl-blue);
+            transition: stroke var(--btn-over);
+        }
+    }
+    
+    &.tab {
+        background-color: white;
+        border: 1px solid rgba(var(--color-grey), 0.5);
+        justify-content: center;
+
+        &:first-child {
+            border-radius: 0.125rem 0 0 0;
+        }
+        &:last-child {
+            border-radius: 0 0.125rem 0 0;
+        }
+        &.active {
+            background-color: var(--color-xl-navy);
+            color: var(--color-ds-yellow);
+            border: 1px solid var(--color-xl-navy);
+        }
+
+    }
+
+    &.c {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.body-ds button, .body-ds .button {
+    font-weight: bold;
 }
 
 .button:hover,
 .button:focus {
-  filter: brightness(1.2);
+    transition: color var(--btn-over), background-color var(--btn-over);
+    filter: brightness(1.2);
 }
 
 .button:focus:hover {

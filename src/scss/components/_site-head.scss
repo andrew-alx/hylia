@@ -6,6 +6,18 @@
   }
 }
 
+article > header {
+    margin-bottom: 4rem;
+
+    @include media-query('sm1') {
+        margin-bottom: 6rem;
+    }
+
+    @include media-query('md') {
+        margin-bottom: 8rem;
+    }
+}
+
 .header-container {
     position: fixed;
     z-index: 10;

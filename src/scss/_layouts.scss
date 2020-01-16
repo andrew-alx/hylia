@@ -1,0 +1,168 @@
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(12, span(1));
+    grid-gap: 0 gutter(12);
+    align-items: center;
+}
+
+.body-ds .hg__full {
+    grid-column-start: 2;
+    grid-column-end: span 10;
+}
+
+.hg__full {
+    grid-column-start: 1;
+    grid-column-end: span 12;
+    
+    @include media-query('lg') {
+        &.to-half {
+            grid-column: span 6;
+            
+            &.innersection {
+                margin-bottom: 0;
+            }
+        }
+        
+        &.centered-text {
+            grid-column-start: 3;
+            grid-column-end: span 7;
+        }
+    }
+}
+
+.hg__content {
+    grid-column-start: 1;
+    grid-column-end: span 6;
+}
+
+@include media-query('sm') {
+    .hg__sec-title {
+        width: span(4)
+    }
+}
+
+@include media-query('sm1') {
+    .hg__sec-title {
+        width: auto;
+    }
+}
+
+// one - two
+.grid-md2 {
+    display: grid;
+    grid-gap: 2rem;
+    
+    @include media-query('md') {
+        grid-template-columns: repeat(2, span(5 of 10));
+        grid-gap: 2rem gutter(10);
+    }
+}
+
+// two - three
+.grid-2-md3 {
+    display: grid;
+    grid-template-columns: repeat(2, span(5 of 10));
+    grid-gap: 1rem gutter(10);
+    
+    @include media-query('md') {
+        grid-template-columns: repeat(3, span(3 of 10));
+        grid-gap: 2rem (span(1 of 10) * 1.25);
+    }
+}
+
+// two - four
+.grid-2-md4 {
+    display: grid;
+    grid-template-columns: repeat(2, span(5 of 10));
+    justify-content: space-between;
+    
+    @include media-query('md') {
+        grid-template-columns: repeat(4, span(2.5 of 10));
+    }
+}
+
+// one - two - four
+.grid-md2-xl4 {
+    display: grid;
+    grid-row-gap: 2rem;
+    
+    @include media-query('md') {
+        grid-template-columns: repeat(2, span(5 of 10));
+        justify-content: space-between;
+    }
+    
+    @include media-query('xl') {
+        grid-template-columns: repeat(4, span(2.5 of 10));
+    }
+}
+
+// four
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, span(2));
+    grid-row-gap: 1rem;
+    justify-content: space-around;
+}
+
+
+
+// ICON GRID
+.icon-grid {
+    grid-column-start: 3;
+    grid-column-end: span 8;
+    text-align: center;
+    position: relative;
+    padding: 2rem 0;
+    
+    @include media-query('md') {
+        grid-column-start: 2;
+        grid-column-end: span 10;
+        padding: 0;
+    }
+    
+    @include media-query('xl') {
+        grid-template-columns: repeat(4, span(2.5 of 10));
+    }
+}
+
+
+
+// SMALL ICON GRID
+.sm-icon-grid {
+    grid-column-start: 1;
+    grid-column-end: span 12;
+    padding: 0;
+    grid-row-gap: 1rem;
+    text-align: center;
+    position: relative;
+    
+    .icon-grid-item {
+        margin-bottom: 0;
+    }
+}
+
+
+
+// COMPANIES GRID
+.comp-grid {
+    grid-column-start: 2;
+    grid-column-end: span 10;
+    text-align: center;
+    
+    img {
+        max-width: 100%;
+        max-height: 2.5rem;
+    }
+    
+    @include media-query('md') {
+        img {
+            max-height: 4rem;
+        }
+    }
+}
+
+.comp-grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

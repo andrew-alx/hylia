@@ -10,3 +10,14 @@
   width: 1px;
   white-space: nowrap;
 }
+
+.anchor {
+    visibility: hidden;
+    position: relative;
+    top: -(var(--fix-head) + 1rem);
+    display: block;
+
+    @include media-query('md') {
+        top: -(var(--fix-head-lrg) + 1rem);
+    }
+}

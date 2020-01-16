@@ -28,6 +28,10 @@
     --fix-head-lrg: 4rem;
     
     --max-width: 105rem;
+    
+    --btn-over: 0.3s ease-out;
+    --btn-off: 0.15s ease-in;
+    --modal-in: 0.4s ease-out;
 }
 
 /* @include dark-mode() {

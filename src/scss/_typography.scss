@@ -24,11 +24,15 @@
 }
 
 body {
-  // Strip the unit off the size ratio to generate a line height
-  $line-height: get-size(600);
-  line-height: $line-height / ($line-height * 0 + 1);
+    // Strip the unit off the size ratio to generate a line height
+    $line-height: get-size(600);
+    line-height: $line-height / ($line-height * 0 + 1);
+    
+    @include apply-utility('font', 'base');
+}
 
-  @include apply-utility('font', 'base');
+h1, h2, h3, h4, h5, h6, p {
+    max-width: 38em;
 }
 
 h1 {
@@ -40,22 +44,153 @@ h2 {
 }
 
 h3 {
-  font-size: get-size(500);
+    &.subtitle {
+        font-size: get-size(600s);
+        margin-bottom: 2rem;
+        line-height: 1.25;
+    }
+}
+
+.sec-title-holder {
+    text-align: center;
+}
+
+.sec-title {
+    font-size: get-size(700s);
+    margin-bottom: 2rem;
+}
+
+.ds-sec-title {
+    font-size: get-size(500);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.subsec-title, .hs-richtext h2 {
+    font-size: get-size(600s);
+}
+
+.ds-subsec-title {
+    font-weight: 800;
+}
+
+.ds-subsec-title, .ds-endsec-title {
+    font-size: 1rem;
+}
+
+.ds-endsec-title {
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: get-size(500s);
+    line-height: 1.5;
+    
+    a {
+        color: var(--color-xl-red);
+        
+        &:visited {
+            color: var(--color-xl-red);
+        }
+        
+        &:hover {
+            color: var(--color-xl-blue);
+        }
+    }
+    
+    &:not(:last-child) {
+        margin-bottom: 0.75rem;
+    }
+}
+
+.highlight p, p.highlight {
+    font-size: get-size(600s);
+}
+
+.small-text p {
+    font-size: get-size(300s);
+}
+
+.ds-quote, .ds-qsrc {
+    font-size: get-size(300s);
+}
+.ds-quote {
+    font-weight: bold;
+    line-height: 120%;
 }
 
 @include media-query('sm') {
+    .ds-quote {
+        line-height: 180%;
+    }
 }
 
 @include media-query('md') {
-  h1 {
-    //font-size: get-size(900);
-  }
+    h1 {
+        //font-size: get-size(900);
+    }
+    
+    h2 {
+        font-size: get-size(600);
+    }
+    
+    h3 {
+        &.subtitle {
+            font-size: get-size(600);
+        }
+    }
+    
+    .subsec-title, .hs-richtext h2, .ds-subsec-title {
+        font-size: get-size(600);
+    }
+    
+    .sec-title, .ds-sec-title {
+        font-size: get-size(700);
+    }
+    
+    .ds-endsec-title {
+        font-size: get-size(500);
+    }
+    
+    p {
+        font-size: get-size(500);
+    }
+    
+    .highlight p, p.highlight {
+        font-size: get-size(600);
+    }
+    
+    .ds-quote, .ds-qsrc {
+        font-size: get-size(500);
+    }
+}
 
-  h2 {
-    font-size: get-size(600);
-  }
+@include media-query('lg') {
+    h3 {
+        &.subtitle {
+            font-size: get-size(700);
+        }
+    }
+    
+    .l-left {
+        text-align: left;
+    }
+}
 
-  h3 {
-    font-size: get-size(700);
-  }
+// CENTRING, MARGINS ETC
+.subtitle, .sec-title, .subsec-title {
+    font-weight: 600;
+}
+
+.sec-title, .subsec-title, .ds-sec-title, .ds-subsec-title, .ds-endsec-title {
+    text-align: center;
+    display: inline-block;
+    line-height: 1.2;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subsec-title, .hs-richtext h2, .ds-subsec-title {
+    margin-bottom: 1rem;
 }

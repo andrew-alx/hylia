@@ -1,5 +1,6 @@
 .hero {
     background: url(../../images/svgs/xl-hero.svg) 100% 0 no-repeat var(--color-xl-navy);
+    color: white;
     background-size: 70%;
     height: 80vh;
     min-height: 30rem;
@@ -17,14 +18,6 @@
     
     @include media-query('lg') {
         background-size: span(5 of 12);
-    }
-    
-    p {
-        color: white;
-    }
-    
-    .subtitle {
-        margin-bottom: 2rem;
     }
 }
 
@@ -158,4 +151,10 @@
         margin-bottom: 0;
         align-self: center;
     }
+}
+
+.body-ds .sec-copy-cent {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -14,13 +14,15 @@
 // Local dependencies
 @import 'typography';
 
-////// Susy Grid setup   
+// Susy Grid setup   
 $susy: (
   'columns': susy-repeat(12),
   'gutters': 0.5,
   'spread': 'narrow',
   'container-spread': 'narrow'
 );
+
+@import 'layouts';
 
 /**
  * GLOBAL STYLES
@@ -51,6 +53,48 @@ hr {
   margin: get-size(900) auto;
 }
 
+// JS Responsive Beacons
+.visible--only-sm {
+    @include media-query('base-max') {
+        display: none !important;
+    }
+    @include media-query('sm1') {
+        display: none !important;
+    }
+}
+
+.visible--only-sm1 {
+    @include media-query('sm-max') {
+        display: none !important;
+    }
+    @include media-query('md') {
+        display: none !important;
+    }
+}
+
+.visible--only-md {
+    @include media-query('sm1-max') {
+        display: none !important;
+    }
+    @include media-query('lg') {
+        display: none !important;
+    }
+}
+
+.visible--only-md-lg {
+    display: none;
+
+    @include media-query('md-lg') {
+        display: block;
+    }
+}
+
+.visible--only-lg {
+    @include media-query('md-max') {
+        display: none !important;
+    }
+}
+
 /**
  * PROJECT IMPORTS
  */
@@ -61,6 +105,7 @@ hr {
 @import 'utilities/wrapper';
 
 // Components
+@import 'components/home';
 @import 'components/button';
 @import 'components/heading-permalink';
 @import 'components/intro';
@@ -73,3 +118,4 @@ hr {
 @import 'components/skip-link';
 @import 'components/syntax-highlighting';
 @import 'components/video-player';
+@import 'components/hsform';

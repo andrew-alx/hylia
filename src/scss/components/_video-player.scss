@@ -1,23 +1,199 @@
-.video-player {
-  position: relative;
-  padding-top: 56.25%;
+.video {
+    position: relative;
+    margin-bottom: 4rem;
+    height: calc((88vw/16) * 9);
+    
+    iframe {
+        width: 100%;
+        height: calc((88vw/16) * 9); // ((screen width - gutter*2)/16) * 9
+    }
+}
 
-  > iframe {
+.body-ds .video {
+    margin-bottom: 2rem;
+    width: 77vw;
+    height: calc((76vw/16) * 9);
+    
+    iframe {
+        height: calc((76vw/16) * 9);
+    }
+}
+
+.video-button {
     position: absolute;
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  // If it’s bleeding out in a post, it needs more padding
-  .post & {
-    padding-top: 63%;
-  }
-
-  @include media-query('md') {
-    .post & {
-      padding-top: 66%;
+    background-color: var(--color-xl-black);
+    overflow: hidden;
+    cursor: pointer;
+    
+    & > figure img {
+        width: 100%;
     }
-  }
+     
+    &:hover { 
+        .vid-icon {
+            background-color: rgba(var(--color-xl-black), 0.9);
+            transition: background-color var(--btn-over);
+        }
+    }
+    
+    &.playing {
+        display: none;
+    }
+}
+
+.video-cover {
+    position: absolute;
+    background-color: rgba(var(--color-xl-black), 0.5);
+    transition: background-color var(--btn-off);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 3px solid var(--color-xl-black);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    p {
+        color: white;
+        background-color: var(--color-xl-black);
+        text-align: center;
+        padding: 0.5rem 1rem;
+        text-shadow: 0 0 1.5rem var(--color-xl-black);
+        line-height: 1.2;
+        
+        @include media-query('sm1') {
+            font-size: get-size(500s);
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+            padding: 1rem 2rem;
+        }
+        
+        @include media-query('md') {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+
+.body-ds {
+    .video-cover {
+        background-color: rgba(var(--color-xl-navy), 0.75);
+        border: 1px solid var(--color-xl-navy);
+    }
+    
+}
+
+.vid-icon-outer {
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vid-icon {
+    background-color: rgba(var(--color-xl-black), 0.5);
+    transition: background-color var(--btn-off);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @include media-query('sm1') {
+        width: 7rem;
+        height: 7rem;
+    }
+    
+    @include media-query('md') {
+        width: 10rem;
+        height: 10rem;
+        top: calc(50% - 5rem);
+        left: calc(50% - 5rem);
+    }
+}
+.vid-triangle {
+    font-size: 0px; 
+    line-height: 0%; 
+    width: 0px;
+    border-top: 1.5rem solid transparent;
+    border-bottom: 1.5rem solid transparent;
+    border-left: 2.5rem solid var(--color-xl-grey);
+    margin-left: 0.5rem;
+    
+    @include media-query('sm1') {
+        border-top-width: 2rem;
+        border-bottom-width: 2rem;
+        border-left-width: 3.5rem;
+    }
+    
+    @include media-query('md') {
+        border-top-width: 3rem;
+        border-bottom-width: 3rem;
+        border-left-width: 5rem;
+    }
+}
+
+.body-ds .vid-icon {
+    background-color: rgba(var(--color-ds-dkgrey), 0.5);
+}
+
+.body-ds .vid-triangle {
+    border: none;
+    font-size: inherit;
+    line-height: inherit;
+    
+    position: relative;
+    background-color: white;
+    text-align: left;
+    transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
+    margin-left: -0.75rem;
+    margin-top: -0.75rem;
+    
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        background-color: inherit;
+    }
+    
+    &, &:before, &:after {
+        width:  1.5rem;
+        height: 1.5rem;
+        border-top-right-radius: 30%;
+    }
+
+    &:before {
+        transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+    }
+    
+    &:after {
+        transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+    }
+    
+    @include media-query('sm1') {
+        margin-left: -1rem;
+        margin-top: -1rem;
+        
+        &, &:before, &:after {
+            width:  2rem;
+            height: 2rem;
+        }
+    }
+    
+    @include media-query('md') {
+        margin-left: -1.25rem;
+        margin-top: -1.25rem;
+        
+        &, &:before, &:after {
+            width:  3rem;
+            height: 3rem;
+        }
+    }
 }
